@@ -1,6 +1,6 @@
 # tex
 
-##sublime+sumatra pdf in windows
+## sublime+sumatra pdf in windows
 
 Ctrl+Shift+P: install LatexTools, Latexing, latex-cwl
 
