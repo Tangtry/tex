@@ -1,0 +1,131 @@
+\documentclass{beamer}%[aspectratio=169]
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\usepackage{tikz}
+\newcommand{\strangearrow}%[2][180]% [angle], content
+{   \begin{tikzpicture}[overlay]
+    \draw[->](-0.1,-0.05)--(0,0.25)--(0.1,-0.05);
+\end{tikzpicture}
+}
+
+
+
+\newtheorem{proposition}{Proposition}
+
+\xdefinecolor{tsinghua}{rgb}{0.455,0.204,0.506}
+\xdefinecolor{mahorse}{rgb}{0.757, 0.757, 0.910}
+
+% No navigation
+\setbeamertemplate{navigation symbols}{}
+
+% item bullet sty
+\setbeamercolor{itemize item}{fg = mahorse}
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{enumerate item}{fg = mahorse!30!black, bg = white}
+\setbeamertemplate{enumerate items}[default]%{\color{tsinghua} $\triangleright$}
+
+% theorem box color
+\setbeamercolor{block title}{use=structure,fg=mahorse!30!black ,bg=mahorse}
+
+
+%% title page contents
+\title[short_title]{full_title}
+
+\author[short_name]{
+	Full_name_1 \inst{1} \and 
+	Full_name_2 \inst{2} \and 
+	Full_name_3 \inst{3}
+	}
+
+\institute[]{
+	\inst{1} School, University \and
+	\inst{2} School, University \and
+	\inst{3} School, University.
+	}
+
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[noframenumbering,plain]
+%\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\section{Introduction}
+
+
+
+\section{Model Framework}
+
+\begin{frame}{Consumer utility model}
+Empirical literature on EVs (Degirmenci and Breitner 2017, Lin and Wu 2018) suggests that consumers’ decision about purchasing EVs depends on the
+	%% vphontom{p} is to vertically align the \undersets
+	\begin{align*}
+		u =& - \underset{\text{EV price}}{p}  + \underset{\text{EV subsidy}}{s \vphantom{p}} - \underset{\text{Charging fare}}{d \phi} + \underset{\substack{\text{Charging station} \\ \text{network effect}}}{\mathcolorbox{mahorse}{f(\mu)}} + \underset{\text{Greenness}}{\mathcolorbox{mahorse}{\theta \vphantom{p}}}
+	\end{align*}
+	% textcolor
+	\begin{itemize}
+		\item $f(\mu)$: concave increasing function;
+		\item $\theta$: random variable $\sim U[0, \bar \theta]$
+	\end{itemize}
+
+	\medskip
+
+	\pause
+
+	EV adoption: 	$\lambda = \underset{\substack{\text{Initial} \\ \text{adopters}}}{\lambda_0}  + \Pr\left(u \geq u_0\right)  \underset{\substack{\text{Potential} \\ \text{consumers}}}{\Lambda} $ 
+
+\end{frame}
+
+
+\begin{frame}{Investors' decision}
+	Following (Springel 2016), we assume that charging stations are \textbf{homogeneous} and equally share the total revenue from EV drivers.
+	The utlity of making the investment	 is 
+	\begin{align*}
+		\zeta = \underset{\text{Profit from charging}}{\frac{\lambda d \phi}{\mu}} 
+			+ \underset{\text{Subsidy for investors}}{\eta \vphantom{\frac{\lambda d \phi}{\mu}}}
+			- \underset{\text{Construction cost}}{c \vphantom{\frac{\lambda d \phi}{\mu}}} 
+	\end{align*}
+
+	\bigskip
+
+	Long run free entry equilibrium $\rightarrow$ No. of charging station in equilibrium.
+\end{frame}
+
+\begin{frame}{Government's problem }
+	The government's objective  is to to stimulate the adoption of EVs to the level that would maximize net benefit of EVs to the government.
+	\begin{align*}
+		\pi = \underbrace{\beta \lambda }_{\substack{\text{Benefit of} \\ \text{EV adoption}}}
+		- \underbrace{s(\lambda - \lambda_0)}_{\substack{\text{Consumers' side} \\ \text{subsidy expenditure}}}
+		- \underbrace{\eta(\mu - \mu_0)}_{\substack{\text{Investors' side} \\ \text{subsidy expenditure}}}
+	\end{align*}
+\end{frame}
+
+
+\begin{frame}{Insights}
+	\textbf{Main Takeaway: }\\
+	\begin{itemize}
+		\item When the investment cost is low, two-sided subisdy is more preferred; 
+		\item Consumers' greenness attitude may not help increase the EV adoption in equilibrium.
+	\end{itemize}
+
+	\bigskip
+
+	\centering
+	\Huge \textbf{Thank you!}
+\end{frame}
+
+
+\end{document}
